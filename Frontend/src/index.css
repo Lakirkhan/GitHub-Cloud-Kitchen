@@ -1,0 +1,37 @@
+@import "tailwindcss";
+body {
+  overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+body {
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+}
+
+.w-full-custom {
+  margin-left: 50px;
+  width: 40% !important;
+}
+.w-full-custom-1 {
+  margin-left: 25px;
+  width: 50% !important;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

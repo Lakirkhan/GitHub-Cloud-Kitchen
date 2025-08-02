@@ -1,0 +1,855 @@
+/* Checkout Container */
+.ch-checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.ch-saved-address-box {
+  border: 2px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ch-radio-toggle-group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ch-edit-icon {
+  cursor: pointer;
+  float: right;
+  /* margin-left: 10px; */
+  margin-top: -80px;
+  color: #007bff;
+}
+
+.ch-edit-icon:hover {
+  color: #0056b3;
+}
+
+.ch-add-new-address-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* margin-right: -10px; */
+  cursor: pointer;
+  float: right;
+  /* margin-top: -460px; */
+  color: #007bff;
+}
+
+.ch-saved-address-box:hover {
+  border-color: #28a745;
+}
+
+.ch-saved-address-box.selected {
+  border-color: #28a745;
+  background-color: #f0fdf4;
+}
+
+.ch-shipping-button {
+  margin-top: 10px;
+}
+
+.ch-saved-details-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 5px;
+  position: relative;
+}
+
+.ch-saved-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ch-edit-icon {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.ch-edit-icon:hover {
+  color: #0056b3;
+}
+
+.ch-add-icon{
+  /* position: absolute; */
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  color: #007bff;
+  /* margin-top: 310px; */
+  
+}
+
+/* Checkout Header */
+.ch-checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.ch-checkout-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.ch-session-timer {
+  background-color: #f8f4ff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0d3ff;
+}
+
+.ch-timer-text {
+  font-size: 0.9rem;
+  color: #6941c6;
+  font-weight: 500;
+}
+
+/* Progress Indicator */
+.ch-checkout-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.ch-progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ch-step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.ch-step-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.ch-progress-step.ch-active .ch-step-number {
+  background-color: #6941c6;
+  color: white;
+}
+
+.ch-progress-step.ch-active .ch-step-label {
+  color: #6941c6;
+  font-weight: 600;
+}
+
+.ch-progress-step.ch-completed .ch-step-number {
+  background-color: #10b981;
+  color: white;
+}
+
+.ch-progress-line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #e0e0e0;
+  margin: 0 10px;
+  position: relative;
+  top: -18px;
+  z-index: 0;
+}
+
+/* Navigation Tabs */
+.ch-checkout-tabs {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 2rem;
+}
+
+.ch-tab {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ch-tab:hover {
+  color: #6941c6;
+}
+
+.ch-tab.ch-active {
+  color: #6941c6;
+  border-bottom-color: #6941c6;
+}
+
+.ch-tab.ch-completed {
+  color: #10b981;
+}
+
+.ch-tab-check {
+  color: #10b981;
+}
+
+/* Checkout Content */
+.ch-checkout-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.ch-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2a2a2a;
+}
+
+.ch-section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Elements */
+.ch-form-info-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0f9ff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d1e9ff;
+}
+
+.ch-info-text {
+  font-size: 0.9rem;
+  color: #0369a1;
+}
+
+.ch-form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ch-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.ch-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.ch-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.ch-input:focus {
+  outline: none;
+  border-color: #6941c6;
+  box-shadow: 0 0 0 2px rgba(105, 65, 198, 0.1);
+}
+
+.ch-input.ch-error {
+  border-color: #ef4444;
+}
+
+.ch-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.ch-textarea:focus {
+  outline: none;
+  border-color: #6941c6;
+  box-shadow: 0 0 0 2px rgba(105, 65, 198, 0.1);
+}
+
+.ch-full-width {
+  width: 100%;
+}
+
+.ch-error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.ch-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.ch-primary-button {
+  background-color: #6941c6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ch-primary-button:hover {
+  background-color: #5b34b0;
+}
+
+.ch-primary-button.ch-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ch-secondary-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ch-secondary-button:hover {
+  background-color: #e5e7eb;
+}
+
+/* Saved Addresses */
+.ch-saved-addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ch-address-card {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.ch-address-card.ch-selected {
+  border-color: #6941c6;
+  background-color: #f8f4ff;
+}
+
+.ch-address-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.ch-address-label {
+  display: block;
+  cursor: pointer;
+}
+
+.ch-address-name {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.ch-address-text {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.ch-address-phone {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.ch-new-address-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ch-radio-input {
+  margin-right: 0.5rem;
+}
+
+.ch-radio-label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Shipping Methods */
+.ch-shipping-methods {
+  margin-bottom: 2rem;
+}
+
+.ch-shipping-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ch-shipping-method-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.ch-shipping-method-card {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.ch-shipping-method-card.ch-selected {
+  border-color: #6941c6;
+  background-color: #f8f4ff;
+}
+
+.ch-shipping-method-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.ch-shipping-label {
+  display: block;
+  cursor: pointer;
+}
+
+.ch-shipping-method-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.ch-shipping-method-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6941c6;
+  margin-bottom: 0.5rem;
+}
+
+.ch-shipping-method-time {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Payment Methods */
+.ch-security-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0fdf4;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d1fae5;
+}
+
+.ch-security-text {
+  font-size: 0.9rem;
+  color: #059669;
+}
+
+.ch-payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ch-payment-method-card {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.ch-payment-method-card.ch-selected {
+  border-color: #6941c6;
+  background-color: #f8f4ff;
+}
+
+.ch-payment-method-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.ch-payment-label {
+  display: block;
+  cursor: pointer;
+}
+
+.ch-payment-method-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.ch-payment-method-description {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.ch-payment-method-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ch-card-icon {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+}
+
+.ch-visa {
+  background-color: #1a1f71;
+}
+
+.ch-mastercard {
+  background-color: #eb001b;
+}
+
+.ch-amex {
+  background-color: #006fcf;
+}
+
+/* Card Details */
+.ch-card-details {
+  margin-top: 1.5rem;
+}
+
+/* Terms and Conditions */
+.ch-terms-and-conditions {
+  margin: 1.5rem 0;
+}
+
+.ch-form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.ch-checkbox {
+  margin-top: 0.25rem;
+}
+
+.ch-checkbox-label {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ch-terms-link,
+.ch-privacy-link {
+  color: #6941c6;
+  text-decoration: underline;
+}
+
+/* Order Summary */
+.ch-order-summary {
+  background-color: #f9fafb;
+  border-radius: 6px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.ch-summary-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ch-empty-cart-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f59e0b;
+  padding: 1rem;
+  background-color: #fffbeb;
+  border-radius: 4px;
+  border: 1px solid #fef3c7;
+}
+
+.ch-empty-cart-text {
+  font-size: 0.95rem;
+}
+
+.ch-order-items {
+  margin-bottom: 1.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ch-order-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ch-order-item:last-child {
+  border-bottom: none;
+}
+
+.ch-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.ch-item-details {
+  flex: 1;
+}
+
+.ch-item-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.ch-item-price {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.ch-order-totals {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.ch-order-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.ch-total-label {
+  color: #6b7280;
+}
+
+.ch-total-value {
+  font-weight: 500;
+}
+
+.ch-grand-total {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ch-checkout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .ch-checkout-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .ch-form-group {
+    grid-template-columns: 1fr;
+  }
+
+  .ch-form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ch-primary-button,
+  .ch-secondary-button {
+    width: 100%;
+  }
+
+  .ch-shipping-method-options,
+  .ch-payment-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .ch-saved-addresses {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ch-checkout-container {
+    padding: 1rem;
+  }
+
+  .ch-checkout-tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .ch-tab {
+    border-bottom: 1px solid #eaeaea;
+    padding: 0.75rem 1rem;
+  }
+
+  .ch-tab.ch-active {
+    border-left: 3px solid #6941c6;
+    border-bottom-color: #eaeaea;
+  }
+
+  .ch-progress-step .ch-step-label {
+    font-size: 0.8rem;
+  }
+
+  .ch-step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Checkbox and Radio Styling */
+.ch-checkbox,
+.ch-radio-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.ch-radio-input {
+  border-radius: 50%;
+}
+
+.ch-checkbox:checked,
+.ch-radio-input:checked {
+  background-color: #6941c6;
+  border-color: #6941c6;
+}
+
+.ch-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ch-radio-input:checked::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ch-checkbox:focus,
+.ch-radio-input:focus {
+  box-shadow: 0 0 0 2px rgba(105, 65, 198, 0.2);
+}
+
+.ch-checkbox.ch-error,
+.ch-radio-input.ch-error {
+  border-color: #ef4444;
+}
+
+/* Loading State */
+.ch-primary-button.ch-loading {
+  position: relative;
+  color: transparent;
+}
+
+.ch-primary-button.ch-loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: ch-spinner 0.8s linear infinite;
+}
+
+@keyframes ch-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
