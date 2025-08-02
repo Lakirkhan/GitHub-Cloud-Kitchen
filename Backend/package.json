@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "nodemon server.js",
+
    "scripts": {
   "build": "npm install && npm rebuild sqlite3",
   "start": "node server.js"
