@@ -3,18 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "nodemon server.js",
-<<<<<<< HEAD
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-=======
-
-   "scripts": {
-  "build": "npm install && npm rebuild sqlite3",
-  "start": "node server.js"
-},
->>>>>>> 88165e5cdbee8d60bc05d5dae10cb8153b1c19ac
   "keywords": [],
   "author": "",
   "license": "ISC",
